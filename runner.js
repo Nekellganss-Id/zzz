@@ -32,7 +32,7 @@ zero.on('qr', () => {
 console.log(color('[','white'), color('!','red'), color(']','white'), color('Please... Scan Is Now Qr Code !'))
 })
 
-fs.existsSync('./session/qrsession.json') && zero.loadAuthInfo('./session/qrsession.json')
+fs.existsSync('session.json') && zero.loadAuthInfo('session.json')
 
 zero.on('connecting', () => {
 start('2', 'Sedang Menyambungkan Mohon Tunggu...')
@@ -41,7 +41,7 @@ zero.on('open', () => {
 success('2', 'Bot Telah Tersambung... Jangan Lupa Subscribe Zero YT7')
 })
 await zero.connect({timeoutMs: 30*1000})
-fs.writeFileSync('./session/qrsession.json', JSON.stringify(zero.base64EncodedAuthInfo(), null, '\t'))
+fs.writeFileSync('session.json', JSON.stringify(zero.base64EncodedAuthInfo(), null, '\t'))
 zero.on('chat-update', async (message) => {
 require('./srv/zero.js')(zero, message)
 })
