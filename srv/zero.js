@@ -403,9 +403,12 @@ fs.unlinkSync(filename)
 //━━━━━━━━━━━━━━━[ MESSAGE GROUP ]━━━━━━━━━━━━━━━━━//
 
 if (isGroup && isAntilink && !zer.key.fromMe) {
-if (budy.includes("://chat.whatsapp.com/")) {
+if (budy.includes("://chat.whatsapp.com/"))
+if (budy.includes("https://"))
+if (budy.includes("http://"))
+if (budy.includes("wa.me/+")){
 if (isGroupAdmins) return reply("admin bebas");
-reply("ANTILINK DETECTED!! Maaf Kamu Dikick Dari Group");
+reply("ANTILINK DETECTED!! SII GOBLOK MALAH LANGGAR! OTW MASUKIN NERAKA.");
 zero.groupRemove(from, [sender]);
 }
 }
